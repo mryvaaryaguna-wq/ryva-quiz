@@ -1,0 +1,16 @@
+
+<html><body style="font-family:Arial">
+<h2>{{ paket }}</h2>
+<h3>Soal {{ nomor }}/5</h3>
+<p>{{ soal.tanya }}</p>
+<form method="post">
+{% if soal.opsi is defined %}
+{% for o in soal.opsi %}
+<div><input type="radio" name="jawaban" value="{{o[0]}}" required> {{o}}</div>
+{% endfor %}
+{% else %}
+<input name="jawaban" required>
+{% endif %}
+<button type="submit">Lanjut</button>
+</form>
+</body></html>
